@@ -17,5 +17,24 @@ let youngSum, averageAgeSum, olderAgeSum;
 
 employees.name.forEach((item, index)=>{
     let year = new Date().getFullYear() - new Date(employees.date[index]).getFullYear()
-    console.log(year);
+    result.push(year);
+    if (year < 30) {
+        young++;
+        youngSum = employees.salary[index];
+    }
+    if (year > 30 && 50 > year) {
+        averageAge++;
+        averageAgeSum = employees.salary[index];
+    }
+    if (year > 50) {
+        olderAge++;
+        olderAgeSum = employees.salary[index];
+        console.log(olderAgeSum);
+    }
 })
+
+result.forEach((item,index)=>{
+    console.log(`сотрудника ${employees.name[index]}  возраст ${item}  лет`);
+})
+
+console.log(`Средный зарплата молодой : ${(youngSum/young)}\n Средный зарплата старший возраст : ${(averageAgeSum/averageAge)}\n Средный зарплата средний возраст : ${(olderAgeSum/olderAge)}`);

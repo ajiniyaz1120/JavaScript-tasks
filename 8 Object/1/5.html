@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object</title>
+  </head>
+  <body>
+    <script>
+      // В анкете заполняется информация о семи сотрудниках: фамилия, дата заключения контракта.
+      // Ровно через одиннадцать месяцев после начала работы сотрудникам предоставляется отпуск
+      // продолжительностью 24 рабочих дня.
+      // Напишите сценарий, определяющий:
+      // - дату начала и окончания отпуска для каждого из сотрудников;
+      // - фамилии сотрудников, отпуск которым будет предоставлен в заданном месяце
+      // - фамилии сотрудников, отпуск которых будет завершен в заданном квартале
+      // - фамилии сотрудников, отпуск которым будет предоставлен в следующем календарном году;
+      // - фамилии сотрудников, отпуск которых будет завершен в следующем календарном году;
+
+      // Anketada jeti xızmetker haqqında maǵlıwmat berilgen:
+      // famılıyası, shártnama dúzilgen sánesi.
+      // Jumıs baslanǵanınan anıq on bir ay ótkennen, xızmetkerlerge 24 jumıs kúninen ibarat demalıs beriledi.
+      // Tómendegilerdi belgileytuǵın skript jazıń :
+      // - hár bir xızmetker ushın demalıstıń baslanıw hám tawısıw sánesi;
+      // - málim bir ayda demalıs beriletuǵın xızmetkerlerdiń atları;
+      // - málim sherekte demalıs tamamlanılatuǵın xızmetkerlerdiń atları;
+      // - keyingi kalendar jılında demalıs beriletuǵın xızmetkerlerdiń atları;
+      // - keyingi kalendar jılında demalısları tawsılatuǵın xızmetkerlerdiń atları;
+
+      let employees = {
+        name: [
+          "Atabek",
+          "Amirxan",
+          "Eldar",
+          "Karamat",
+          "Islam",
+          "Muslim",
+          "Timur",
+        ],
+        date: [
+          "2018-06-16",
+          "2019-05-26",
+          "2018-01-25",
+          "2021-08-19",
+          "2017-03-22",
+          "2019-04-03",
+          "2020-05-21",
+        ],
+      };
+
+      let result = [];
+      employees.date.forEach((item, index) => {
+        let startDate = new Date(employees.date[index]);
+        startDate.setMonth(startDate.getMonth() + 11);
+        console.log(startDate);
+        let endDate = new Date(startDate);
+        endDate.setDate(endDate.getDate() + 24);
+        //1
+        document.write(
+          `сотрудник ${employees.name[index]} начала отпуска ${startDate.toLocaleDateString()}, окончания отпуска ${endDate.toLocaleDateString()} <br>`
+        );
+        //2
+        
+      });
+    </script>
+  </body>
+</html>

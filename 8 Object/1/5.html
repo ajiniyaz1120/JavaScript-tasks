@@ -24,7 +24,7 @@
       // Tómendegilerdi belgileytuǵın skript jazıń :
       // - hár bir xızmetker ushın demalıstıń baslanıw hám tawısıw sánesi;
       // - málim bir ayda demalıs beriletuǵın xızmetkerlerdiń atları;
-      // - málim sherekte demalıs tamamlanılatuǵın xızmetkerlerdiń atları;
+      // - málim sherekte demalıs tamamlanılatuǵın xızmetkerlerdiń atları (paydalanıwshı kirgizedi);
       // - keyingi kalendar jılında demalıs beriletuǵın xızmetkerlerdiń atları;
       // - keyingi kalendar jılında demalısları tawsılatuǵın xızmetkerlerdiń atları;
 
@@ -48,12 +48,14 @@
           "2020-05-21",
         ],
       };
-
-      let result = [];
+      let targetMonth = +prompt("Введите номер месяца в интервале (1-12):");;
+      let quarter = +prompt("Введите номер квартала в интервале (1-3):");
+      let certainMonth = [];
+      let nameOnQuarter = [];
+      let year = [], endNextYear = [];
       employees.date.forEach((item, index) => {
         let startDate = new Date(employees.date[index]);
         startDate.setMonth(startDate.getMonth() + 11);
-        console.log(startDate);
         let endDate = new Date(startDate);
         endDate.setDate(endDate.getDate() + 24);
         //1
@@ -61,8 +63,36 @@
           `сотрудник ${employees.name[index]} начала отпуска ${startDate.toLocaleDateString()}, окончания отпуска ${endDate.toLocaleDateString()} <br>`
         );
         //2
-        
+        if (startDate.getMonth() === targetMonth-1) {
+            certainMonth.push(employees.name[index])
+        }
+        //3
+        if (quarter*4-3 <= endDate.getMonth() && endDate.getMonth() <= quarter*4) {
+            nameOnQuarter.push(employees.name[index])
+        }
+        //4
+        if (startDate.getFullYear() > new Date(employees.date[index]).getFullYear()) {
+            year.push(employees.name[index]);
+            console.log(year);
+        }
+        //5
+        if (endDate.getFullYear() > new Date(employees.date[index]).getFullYear()) {
+            endNextYear.push(employees.name[index]);
+            console.log(endNextYear);
+        }
       });
+      document.write(`
+      имя сотрудника, у которого заканчивается месяц: ${certainMonth} <br>
+      `)
+      document.write(`
+      сотрудники заданном квартале: ${nameOnQuarter}<br>
+      `)
+      document.write(`
+      Имена сотрудников, которым будет предоставлен отпуск в следующем календарном году : ${year}<br>
+      `)
+      document.write(`
+      Имена сотрудников, чьи отпуска заканчиваются в следующем календарном году : ${endNextYear}<br>
+      `)
     </script>
   </body>
 </html>

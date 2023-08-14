@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5</title>
+  </head>
+  <body>
+    <script>
+
+      //  Напишите сценарий, который для заданной даты определяет, сколько дней прошло после некоторого события.
+      //   Arnawlı bir sáne ushın qanday da waqıyadan neshe kún ótkenligin anıqlaytuǵın skript jazıń.
+
+      let date = prompt("Введите дату(дд-мм-гг):");
+      let now = new Date();
+      let datArr = date.split('-');
+      let writtenDate = new Date(datArr[2], datArr[1]-1, datArr[0]);
+
+      let result = Math.floor(
+        Math.abs((now.getTime() - writtenDate.getTime()) / 86400000)
+      );
+      document.write(`После события прошло ${result} дней.`)
+
+    </script>
+  </body>
+</html>

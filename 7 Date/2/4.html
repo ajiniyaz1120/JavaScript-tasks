@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+</head>
+<body>
+    
+    <div class="container">
+        <span id="minute">
+
+        </span>
+    </div>
+
+    <style>
+
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+
+    <script>
+
+        // Напишите сценарий, который по заданному времени определяет количество минут, прошедших от начала текущего занятия.
+
+        // Belgilengen waqıttı esapqa alǵan halda, ámeldegi iskerlik baslanǵanınan berli ótken minutalar sanın anıqlaytuǵın skript jazıń.
+        
+
+        let date = prompt("Введите начала занятий(mm:hh):");
+
+        let now = new Date();
+        let dateArr = date.split(':');
+
+        let past = new Date(now.getFullYear(),now.getMonth(),now.getDate(), dateArr[0],dateArr[1]);
+        let minut = Math.floor((now-past)/(60000));
+
+        document.getElementById('minute').innerHTML = minut + ' прошедший';
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11</title>
+  </head>
+  <body>
+    <h1>Hello <span>JavaScript</span></h1>
+    <style>
+      body {
+        background-color: #000;
+      }
+      h1 {
+        background-color: rgba(0, 255, 255, 0.199);
+        color: #fff;
+        width: 222px;
+      }
+      span {
+        color: rgb(234, 250, 6);
+      }
+    </style>
+
+    <script>
+        
+      /*Организовать беспрерывный ввод чисел с клавиатуры, пока пользователь не
+      введёт 0. После ввода нуля, показать на экран количество чисел, которые были введены, их общую сумму и среднее арифметическое. Подсказка: необходимо объявить переменную-счетчик, которая будет считать количество введенных чисел, и переменную, которая будет накапливать общую сумму чисел.*/
+
+      /*Klaviaturadan paydalaniwshig'a sanlardin' u'zliksiz kiritiliwin payda etin', 0 kiritiledi. Noldi kiritgennen son' ekranda kiritilgen sanlar sani, olardin' uliwma jiyindisi ha'm ortasha arifmetik ma'nisi ko'rsetiledi. Ma'sla'hat: siz kiritken sanlar sanin esaplaytug'in esaplag'ish o'zgeriwshisin ha'm sanlardin' uliwma jiyindisin toplaytug'in o'zgeriwshisin dag'aza qiliwin'iz kerek. */
+
+      
+      let price = 0
+      let num
+      let count = 0 
+
+      do {
+        num = +prompt("Введите число: ")
+        count++;
+        price += num;
+        
+      }while( num != 0);
+
+      alert(price);
+      alert(price / count);
+
+    </script>
+  </body>
+</html>

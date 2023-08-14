@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+<body>
+    <h1>Hello <span>JavaScript</span></h1>
+    <style>
+        
+      body {
+        background-color: #000;
+      }
+      h1 {
+        background-color: rgba(0, 255, 255, 0.199);
+        color: #fff;
+        display: block;
+      }
+      span {
+        color: rgb(234, 250, 6);
+      }
+    
+    </style>
+    <script>
+        // 3) Сформировать из введенного числа обратное по порядку входящих в него цифр и вывести на экран.
+//  Например, если введено число 3486, то надо вывести число 6843.
+
+//                                                          birinshi jol
+// let x = prompt('Введите число: ')
+// let result = 0
+// console.log(String(x).split("").reverse().join(""));
+
+// let s = 2099
+// console.log(String(s).split("").reverse().join(""));
+
+// let z = 2048;
+// console.log(String(z).split("").reverse().join(""));
+
+// let c = 321;
+// console.log(String(c).split("").reverse().join(""));
+
+//                                                         ekinshi
+// let x = prompt('Введите число: ')
+// let result = "";
+// for(let i = String(x).length-1; i>=0; i--){
+//     result = result + String(x)[i]
+// }
+// console.log(result);
+
+// let m = 112;
+// let p = "";
+// for(let i = String(m).length-1; i>=0; i--){
+//     p = p + String(m)[i]
+// }
+// console.log(p);
+
+//                                                         u'shinshi
+// let x = 25
+// let result = 0
+
+// while(true){
+//     let temp = x%10
+//     result = result*10 + temp
+//     x = parseInt(x/10)
+
+//     if(x==0){
+//         break
+//     }
+// }
+// console.log(result);
+
+let colorNumber = prompt("Введите число: ");
+let resultNumber = 0;
+
+while(true){
+    let resNumber = colorNumber%10;
+    resultNumber = resultNumber*10 + resNumber;
+    colorNumber = parseInt(colorNumber/10)
+
+    if(colorNumber==0){
+        break
+    }
+}
+console.log(resultNumber)
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8</title>
+  </head>
+  <body>
+    <script>
+      //  Напишите сценарий, который по дате рождения человека определяет, под каким знаком зодиака родился человек.
+      // Adamnıń qaysı zodiak astında tuwılǵanlıǵın anıqlaw ushın onıń tuwılǵan sánesinen paydalanatuǵın skript jazıń.
+
+      let date = prompt("Введите дату(дд-мм):");
+      let dateArray = date.split("-");
+      let dateIn = new Date(2023, dateArray[1] - 1, dateArray[0]);
+      let month = dateIn.getMonth(dateArray[1]) + 1;
+      let day = dateIn.getDate(dateArray[0]);
+      let zodiac;
+      switch (month) {
+        case 1:
+          if (day >= 21) zodiac = "Водолей";
+          else zodiac = "Козерог";
+          break;
+        case 2:
+          if (day >= 20) zodiac = "Рыбы";
+          else zodiac = "Водолей";
+          break;
+        case 3:
+          if (day >= 21) zodiac = "Овен";
+          else zodiac = "Рыбы";
+          break;
+        case 4:
+          if (day >= 21) zodiac = "Телец";
+          else zodiac = "Овен";
+          break;
+        case 5:
+          if (day >= 22) zodiac = "Близнецы";
+          else zodiac = "Телец";
+          break;
+        case 6:
+          if (day >= 22) zodiac = "Рак";
+          else zodiac = "Близнецы";
+          break;
+        case 7:
+          if (day >= 23) zodiac = "Лев";
+          else zodiac = "Рак";
+          break;
+        case 8:
+          if (day >= 24) zodiac = "Дева";
+          else zodiac = "Лев";
+          break;
+        case 9:
+          if (day >= 24) zodiac = "Весы";
+          else zodiac = "Дева";
+          break;
+        case 10:
+          if (day >= 24) zodiac = "Скорпион";
+          else zodiac = "Весы";
+          break;
+        case 11:
+          if (day >= 23) zodiac = "Стрелец";
+          else zodiac = "Скорпион";
+          break;
+        case 12:
+          if (day >= 23) zodiac = "Козерог";
+          else zodiac = "Стрелец";
+          break;
+        default:
+          zodiac = "Некорректная дата";
+          break;
+      }
+      document.write(zodiac);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12</title>
+  </head>
+  <body>
+    <script>
+      //     В анкете заполняется информация о семи сотрудниках: фамилия, дата заключения контракта. Ровно через одиннадцать месяцев после начала работы сотрудникам предоставляется отпуск продолжительностью 24 рабочих дня.
+      //     Напишите сценарий, определяющий:
+      //   - дату начала и окончания отпуска для каждого из сотрудников;
+
+      //   - фамилии сотрудников, отпуск которым будет предоставлен в заданном месяце
+
+      //   - фамилии сотрудников, отпуск которых будет завершен в заданном квартале
+
+      //   - фамилии сотрудников, отпуск которым будет предоставлен в следующем календарном году;
+
+      //   - фамилии сотрудников, отпуск которых будет завершен в следующем календарном году;
+
+      // Anketada jeti xızmetker haqqında maǵlıwmat berilgen: famılıyası, shártnama dúzilgen sánesi. Jumıs baslanǵanınan anıq on bir ay ótkennen, xızmetkerlerge 24 jumıs kúninen ibarat demalıs beriledi.
+      // Tómendegilerdi belgileytuǵın skript jazıń :
+      // - hár bir xızmetker ushın demalıstıń baslanıw hám tawısıw sánesi;
+      // - málim bir ayda demalıs beriletuǵın xızmetkerlerdiń atları;
+      // - málim sherekte demalıs tamamlanılatuǵın xızmetkerlerdiń atları;
+      // - keyingi kalendar jılında demalıs beriletuǵın xızmetkerlerdiń atları;
+      // - keyingi kalendar jılında demalısları tawsılatuǵın xızmetkerlerdiń atları;
+
+      let employees = [
+        ["Ivanov", "2020-06-15"],
+        ["Petrov", "2019-11-30"],
+        ["Sidurov", "2022-02-20"],
+        ["Sergeryov", "2018-03-10"],
+        ["Medvedov", "2016-12-01"],
+        ["Navalniyov", "2023-04-25"],
+      ];
+      
+      let targetMonth = 6;
+      let certainMonth = [], nameQuarter = [], startYear = [], endYear = [];
+      let quarter = 1;
+      //   - дату начала и окончания отпуска для каждого из сотрудников;
+      employees.forEach((employee) => {
+        let startDate = new Date(employee[1]);
+        startDate.setMonth(startDate.getMonth() + 11);
+        let endDate = new Date(startDate);
+        endDate.setDate(endDate.getDate() + 24);
+
+      //   - фамилии сотрудников, отпуск которым будет предоставлен в заданном месяце
+        if (endDate.getMonth() === targetMonth-1) {
+          certainMonth.push(employee[0])
+        }
+
+      // - фамилии сотрудников, отпуск которых будет завершен в заданном квартале
+        if (quarter*4-3 <= endDate.getMonth() && endDate.getMonth() <= quarter * 4) {
+          nameQuarter.push(employee[0])
+        }
+
+      //   - фамилии сотрудников, отпуск которым будет предоставлен в следующем календарном году;
+        if (startDate.getFullYear() > new Date(employee[1]).getFullYear()) {
+          startYear.push(employee[0])
+        }
+
+      //   - фамилии сотрудников, отпуск которых будет завершен в следующем календарном году;
+        if (endDate.getFullYear() > new Date(employee[1]).getFullYear()) {
+          endYear.push(employee[0])
+        }
+
+        //1
+        document.write(
+          `Сотрудник ${
+            employee[0]
+          }: Начало отпуска - ${startDate.toLocaleDateString()}, Конец отпуска - ${endDate.toLocaleDateString()} <br>`
+        );
+      });
+      //2
+      document.write(`<br>имя сотрудника, у которого заканчивается месяц : ${certainMonth}<br>`)
+      //3
+      document.write(`<br>сотрудники заданном квартале: ${nameQuarter}<br>`)
+      //4
+      document.write(`<br>сотрудники предоставлен в следующем году: ${startYear}<br>`)
+      //5
+      document.write(`<br>сотрудники завершен в следующем году: ${endYear}<br>`)
+
+    </script>
+  </body>
+</html>

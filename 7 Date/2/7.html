@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7</title>
+</head>
+<body>
+    <script>
+        // Напишите сценарий, который по заданной дате определяет номер недели в году.
+        // Sáne berilgen jıl háptesin belgileytuǵın skript jazıń.
+
+        let date = prompt('Введите дату(дд-мм-гг):');
+        let dateArray = date.split('-')
+        let now = new Date();
+        let past = new Date(dateArray[2],dateArray[1]-1,dateArray[1])
+
+        let result = Math.ceil((now.getTime()-past.getTime())/604800000);
+        document.write(`это было ${result} недель`);
+
+    </script>
+</body>
+</html>

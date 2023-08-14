@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>13</title>
+  </head>
+  <body>
+    <script>
+      // В анкете заполняется информация о семи сотрудниках: фамилия, дата заключения контракта, продолжительность отпуска. Ровно через одиннадцать месяцев после начала работы сотрудникам предоставляется отпуск, продолжительность которого оговорена в контракте (12, 24, 30, 48, 60 дней). Напишите сценарий, определяющий:
+      // - дату начала и окончания отпуска для каждого из сотрудников;
+      // - фамилии сотрудников, начала отпусков которых приходятся на заданный месяц (месяц выбирается пользователем);
+      // - в зависимости от введенной пользователем даты фамилии сотрудников, которым предоставлен отпуск;
+      // - в зависимости от введенной пользователем даты фамилии сотрудников, которые в данный момент работают (не находятся в отпуске).
+
+      // Anketada jeti dana xızmetker haqqında maǵlıwmatlar berilgen: famılıyası, shártnama dúzilgen sánesi, demalıs múddeti. Jumıs baslanǵanınan tolıq on bir ay ótkennen, xızmetkerlerge demalıs beriledi, onıń múddeti shártnamada kórsetilgen (12, 24, 30, 48, 60 kún). Tómendegilerdi belgileytuǵın skript jazıń :
+      // - hár bir xızmetker ushın demalıstıń baslanıw hám tawısıw sánesi;
+      // - demalısları málim bir ayda baslanatuǵın xızmetkerlerdiń atları (ay paydalanıwshı tárepinen saylanadı );
+      // - paydalanıwshı tárepinen kiritilgen sánege qaray, demalıs berilgen xızmetkerlerdiń atları;
+      // - paydalanıwshı tárepinen kiritilgen sánege qaray, házirde islep atirǵan xızmetkerlerdiń ısımlerı (demalısta emes).
+
+      let employees = [
+        ["Ivanov", "2020-06-15"],
+        ["Petrov", "2020-12-30"],
+        ["Sidurov", "2022-02-20"],
+        ["Sergeryov", "2022-03-10"],
+        ["Medvedov", "2021-12-01"],
+        ["Navalniyov", "2023-04-25"],
+      ];
+
+      let monthRest = +prompt('Введите число')
+        let targetMonth = 3;
+        let certainMonth = [], atRest = [], atWork = [];
+      let expriences = employees.map((employee) => {
+        let startDate = new Date (employee[1]);
+        startDate.setDate(startDate.getMonth()+11);
+        let endDate = new Date (startDate);
+        endDate.setDate(endDate.getDate()+24)
+        //1
+        document.write(`сотрудник ${employee[0]} начала отпуска ${startDate.toLocaleDateString()} ,окончания отпуска ${endDate.toLocaleDateString()}<br>`)
+        //2
+        if (endDate.getMonth() === targetMonth-1) {
+            certainMonth.push(employee[0])
+        }
+        //3
+        if (new Date(startDate).getMonth() <= monthRest && monthRest <= new Date (endDate).getMonth()) {
+          atRest.push(employee[0]);
+        }else{
+          atWork.push(employee[0])
+        }
+      })
+
+      document.write(`<br>имя сотрудника, у которого заканчивается месяц: ${certainMonth}`)
+      document.write(`<br>Сейчас в отпуске: ${atRest}`)
+      document.write(`<br>Сейчас на работе: ${atWork}`)
+
+
+    </script>
+  </body>
+</html>

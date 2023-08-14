@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8</title>
+</head>
+<body>
+    <h1>Hello <span>JavaScript</span></h1>
+    <style>
+        body{background-color:#000}
+        h1{color: #fff;}
+        span{color: rgb(234, 250, 6);}
+    </style>
+    <script>
+
+    /* 8) Вывести на экран столько элементов ряда Фибоначчи, сколько указал пользователь. Например, если на ввод поступило число 6, то вывод должен содержать шесть первых чисел ряда Фибоначчи: 1 2 3 5 8 13.*/
+        let n = prompt();
+        let a = 1;
+        let b = 1;
+        let result = "1, 1, "
+        for (let i = 1; i <= n; i++) {
+            if(i==1 || i==2){
+                console.log(1);
+                continue;
+            }
+            c = a + b;
+            a = b;
+            b = c;
+            result+=b + ", "
+        }
+        
+        alert(result)
+
+    </script>
+</body>
+</html>

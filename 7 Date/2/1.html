@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="timeWatch">
+        <span class="Month"></span>
+        <span class="Time"></span>
+      </div>
+    </div>
+
+    <style>
+      .timeWatch {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        font-size: 50px;
+        background: rgb(204, 247, 204);
+        margin: 80px 80px;
+      }
+      .timeWatch .Month {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+      }
+    </style>
+    <script>
+      //   Создать в одной функции часы в окне документа в 24 часовом формате, а также вывести текущую дату, указав название месяца на русском языке.
+
+      // Hújjet aynasında 24 saatlıq formatda bir funkciyada saat jaratıń hám orıs tilinde ay atınıń kórsetken halda ámeldegi sáneni kórsetiń.
+
+      let time = document.querySelector(".Time");
+      let date = document.querySelector(".Month");
+
+      function showDay(numDay) {
+        let week = [
+          "январь",
+          "февраль ",
+          "март ",
+          "апрель",
+          "май",
+          "июнь",
+          "июль",
+          "август",
+          "сентябрь",
+          "октябрь",
+          "ноябрь",
+          "декабрь",
+        ];
+        return week[numDay]
+      }
+
+
+      setInterval(() => {
+        time.innerHTML = new Date().toLocaleTimeString();
+        date.innerHTML = new Date().getMonth() + ' ' + showDay(new Date().getMonth()) + ' ' + new Date().getFullYear();
+      }, 1000);
+    </script>
+  </body>
+</html>

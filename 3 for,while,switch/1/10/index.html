@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10</title>
+  </head>
+  <body>
+    <h1>Hello <span>JavaScript</span></h1>
+    <style>
+      body {
+        background-color: #000;
+      }
+      h1 {
+        background-color: rgba(0, 255, 255, 0.199);
+        color: #fff;
+        display: block;
+      }
+      span {
+        color: rgb(234, 250, 6);
+      }
+    </style>
+    <script>
+      /*Необходимо суммировать все нечётные целые числа в диапазоне, который введёт пользователь с клавиатуры.*/
+
+      /*Paydalaniwshi klaviaturadan kiritetug'in diyapazondag'i ba'rshe taq sanlardi qosiw kerek.*/
+
+      let a = +prompt("Введите мин: ");
+      let b = +prompt("Введите макс: ");
+      let s=0
+      for (let i = a; i <= b; i++) {
+        if( i % 2 != 0 ){
+          s += i
+        }
+      }
+      console.log(s);
+
+      //   let taq = 0
+      //   let even = 0
+      // for(let i = 0; i<5; i++){
+      //   let num = +prompt()
+      //   if(num % 2 != 0){
+      //     taq += num
+      //   }else{
+      //     even += num
+      //   }
+      // }
+      // console.log(`taq = ` + taq);
+      // console.log(`Jup = ` + even);
+
+      // let a = prompt();
+      // let even = 0;
+      // let odd = 0;
+      // for (let i = 0; i < a.length; i++) {
+      //   if (a[i] % 2 == 0) {
+      //     even++;
+      //   } else {
+      //     odd++;
+      //   }
+      // }
+      // console.log("Четные: " + even);
+      // console.log("Нечетные: " + odd);
+
+
+      // let price = prompt('Введите число:')
+      // let s = 0
+      // let p = 1
+
+      // for (let i = 0; i < price.length; i++){
+      //     s=s+parseInt(price[i])
+      //     p=p*parseInt(price[i])
+      // }
+
+      // alert(s);
+      // alert(p);
+    
+
+    </script>
+  </body>
+</html>

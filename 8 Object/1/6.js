@@ -41,5 +41,5 @@ employees.surname.forEach((item,i)=>{
         if (start.getDay() == 0 || 6 == start.getDay()) offDay++
         else workDay++
     }
-    console.log(`Сотрудник: ${employees.surname[i]}, Количество рабочих дней: ${workDay}, Количество выходных дней: ${offDay}, Размер $: ${employees.money[i]*workDay*8}`);
+    console.log(`Сотрудник: ${employees.surname[i]}, Количество рабочих дней: ${workDay}, Количество выходных дней: ${offDay}, Сумма $: ${employees.money[i]*workDay*8}`);
 })

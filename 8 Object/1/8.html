@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object</title>
+  </head>
+  <body>
+    <script>
+      // В старояпонском календаре был принят 60-летний цикл, состоящий из пяти 12-летних подциклов.
+      // Подциклы обозначались названиями цвета: зеленый, красный, желтый, белый, черный.
+      // Внутри каждого подцикла годы носили названия животных: крысы, коровы, тигра, зайца,
+      // дракона, змеи, лошади, овцы, обезьяны, курицы, собаки и свиньи. Например, 1984 год
+      // (год зеленой крысы) был началом очередного цикла. Напишите сценарий, который по заданной дате
+      // определяет название года по старояпонскому календарю.
+      
+      // Áyyemgi yapon kalendarında bes 12 jıllıq kishi cikldan ibarat 60 jıllıq cikl qabıl etilgen. Subsikllar reń atları menen belgilendi: jasıl, qızıl, sarı, aq, qara. Hár bir kishi ciklda jıllar haywanlardıń atların aldı : tıshqanlar, siyirlar, jolbarıslar, qoyanlar, aydarhalar, jılanlar, atlar, qoylar, meshinler, tawıqlar, iytler hám dońızlar. Mısalı, 1984 jıl (jasıl tıshqan jılı ) keyingi cikldıń baslanıwı edi. Áyyemgi yapon kalendarına kóre, sáne berilgen jıl atınıń belgileytuǵın skriptti jazıń.
+      
+      let date = prompt("Введите число:");
+      let year = Math.abs(new Date(date, 0, 1).getFullYear() - new Date(1984, 0, 1).getFullYear());
+      let horoscope = {
+          color: ["зеленый", "красный", "желтый", "белый", "черный"],
+          animal: [
+              "крысы",
+          "коровы",
+          "тигра",
+          "зайца",
+          "дракона",
+          "змеи",
+          "лошади",
+          "овцы",
+          "обезьяны",
+          "курицы",
+          "собаки",
+          "свиньи",
+        ],
+      };
+
+      let nameAnimal = horoscope.animal[year%12];
+      let namecolor = horoscope.color[parseInt(year/12)];
+      alert(`Год ${namecolor} ${nameAnimal}`)
+    </script>
+  </body>
+</html>
